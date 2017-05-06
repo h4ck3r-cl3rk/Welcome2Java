@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ThreadManager {
 	private static ThreadManager threadManagerInstance;
-	public List<Thread> threads = new ArrayList<>();
+	public List<ThreadRunner> threads = new ArrayList<>();
 	public final int MAX_THREADS = 4;
 	
 	private ThreadManager () {
@@ -13,7 +13,7 @@ public class ThreadManager {
 	}
 	
 	public void addPageThread(ThreadRunner tr) {
-		threads.add(new Thread(tr));
+		threads.add(tr);
 	}
 	
 	
@@ -23,11 +23,6 @@ public class ThreadManager {
 		}
 		
 		return threadManagerInstance;
-	}
-
-	public boolean allThreadsDone() {
-		
-		return false;
 	}
 	
 }
