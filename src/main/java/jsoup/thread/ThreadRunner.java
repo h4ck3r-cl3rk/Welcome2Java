@@ -8,6 +8,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import jsoup.entities.Page;
+import jsoup.logic.Main;
 
 public class ThreadRunner extends Thread {
 	private Page page;
@@ -27,19 +28,19 @@ public class ThreadRunner extends Thread {
 			
 			System.err.println("Jsoup Connection Page: " + page);
 			e.printStackTrace();
-		}
-		
+		}		
 
 		try {
 			saveToFile(doc);
 		} catch (IOException e) {
 			System.err.println("Page: " + page);
+			Main.getLogger().error("saveTofile failed for Page: " + page);
 			e.printStackTrace();
 		}
 	}
 
 	public boolean saveToFile(Document doc) throws IOException {
-        final File f = new File("filename.html");
+        final File f = new File(page.getName() + ".html");
         FileUtils.writeStringToFile(f, doc.outerHtml(), "UTF-8");
         
 		return false;

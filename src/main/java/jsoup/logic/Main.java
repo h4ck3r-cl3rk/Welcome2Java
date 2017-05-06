@@ -3,15 +3,18 @@ package jsoup.logic;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import jsoup.entities.Page;
 import jsoup.thread.ThreadManager;
 import jsoup.thread.ThreadRunner;
 
 public class Main {
+	private static Logger logger = Logger.getRootLogger();
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
+		logger.info("getting singleton for ThreadManager...");
 		ThreadManager thrdMngr = ThreadManager.getInstance();
 		
 		List<Page> pageList = new ArrayList<>();
@@ -21,9 +24,7 @@ public class Main {
 		pageList.add(new Page("http://example.com/", "Example"));
 		pageList.add(new Page("http://en.wikipedia.org/", "Wikipedia"));
 		pageList.add(new Page("https://serienstream.to/", "SerienStream"));
-		pageList.add(new Page("https://serienjunkies.org/", "SerienJunkies"));	
-
-		Thread.sleep(1000);
+		pageList.add(new Page("https://serienjunkies.org/", "SerienJunkies"));
 		
 		for (Page page : pageList) {
 			thrdMngr.addPageThread(new ThreadRunner(page));
@@ -44,6 +45,10 @@ public class Main {
 			System.out.println(elmnt.text());
 		}
 		
+	}
+	
+	public static Logger getLogger() {
+		return logger;
 	}
 
 }
