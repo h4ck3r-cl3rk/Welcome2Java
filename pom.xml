@@ -4,7 +4,7 @@
 	<groupId>com.test.corp</groupId>
 	<artifactId>dev.java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Welcome2Java</name>
+	<name>MEGAKernel</name>
 	<description>Java in a nutshell</description>
 
 	<dependencies>
