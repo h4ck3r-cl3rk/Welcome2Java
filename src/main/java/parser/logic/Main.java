@@ -1,13 +1,14 @@
-package jsoup.logic;
+package parser.logic;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
-import jsoup.entities.Page;
-import jsoup.thread.ThreadManager;
-import jsoup.thread.ThreadRunner;
+
+import parser.entities.Page;
+import parser.thread.ThreadManager;
+import parser.thread.ThreadRunner;
 
 public class Main {
 	private static Logger logger = Logger.getRootLogger();

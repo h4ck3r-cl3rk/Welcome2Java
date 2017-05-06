@@ -1,4 +1,4 @@
-package jsoup.thread;
+package parser.thread;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,8 +7,8 @@ import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import jsoup.entities.Page;
-import jsoup.logic.Main;
+import parser.entities.Page;
+import parser.logic.Main;
 
 public class ThreadRunner extends Thread {
 	private Page page;

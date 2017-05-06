@@ -1,4 +1,4 @@
-package jsoup.thread;
+package parser.thread;
 
 import java.util.ArrayList;
 import java.util.List;

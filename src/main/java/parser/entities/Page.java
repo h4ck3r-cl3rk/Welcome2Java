@@ -1,4 +1,4 @@
-package jsoup.entities;
+package parser.entities;
 
 public class Page {
 	private String baseURL;
